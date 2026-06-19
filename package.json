@@ -1,0 +1,25 @@
+{
+  "name": "portfolio-vite",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.2",
+    "framer-motion": "^12.40.0",
+    "lucide-react": "^0.564.0",
+    "react": "^19",
+    "react-dom": "^19",
+    "vite": "^8.0.16"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5",
+    "tailwindcss": "^4.2.0"
+  }
+}

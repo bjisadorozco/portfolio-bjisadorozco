@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  /* Coffee/Brown Color Palette */
+  --color-coffee-50: #FAF5F0;
+  --color-coffee-100: #F5EBE0;
+  --color-coffee-200: #E6D5C3;
+  --color-coffee-300: #D4B896;
+  --color-coffee-400: #C19A6B;
+  --color-coffee-500: #A67C52;
+  --color-coffee-600: #8B5A2B;
+  --color-coffee-700: #6B4423;
+  --color-coffee-800: #4A2C17;
+  --color-coffee-900: #2D1810;
+  
+  /* Font Families */
+  --font-sans: 'Montserrat', system-ui, sans-serif;
+  --font-display: 'Montserrat', system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-coffee-700;
+  }
+  
+  body {
+    @apply bg-coffee-900 text-coffee-100 antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-coffee-100 mb-6;
+    font-family: var(--font-display);
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl text-coffee-300 max-w-2xl;
+  }
+  
+  .btn-primary {
+    @apply px-8 py-4 bg-coffee-500 hover:bg-coffee-400 text-coffee-900 font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-coffee-500/25;
+  }
+  
+  .btn-secondary {
+    @apply px-8 py-4 border-2 border-coffee-400 text-coffee-200 font-semibold rounded-full transition-all duration-300 hover:bg-coffee-400 hover:text-coffee-900 hover:scale-105;
+  }
+  
+  .card {
+    @apply bg-coffee-800/50 backdrop-blur-sm border border-coffee-700/50 rounded-2xl p-6 transition-all duration-300 hover:bg-coffee-800/70 hover:border-coffee-600/50;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-coffee-300 via-coffee-400 to-coffee-500 bg-clip-text text-transparent;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2D1810;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6B4423;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8B5A2B;
+}
+
+/* Selection color */
+::selection {
+  background: #A67C52;
+  color: #2D1810;
+}
