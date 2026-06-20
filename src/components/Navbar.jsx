@@ -67,16 +67,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <motion.a
-            href="#contacto"
-            className="hidden lg:block btn-primary text-sm py-3 px-6"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Contactar
-          </motion.a>
-
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -111,16 +101,6 @@ export default function Navbar() {
                   {link.name}
                 </motion.a>
               ))}
-              <motion.a
-                href="#contacto"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                onClick={() => setIsOpen(false)}
-                className="block mt-4 btn-primary text-center"
-              >
-                Contactar
-              </motion.a>
             </div>
           </motion.div>
         )}
