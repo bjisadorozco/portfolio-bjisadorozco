@@ -37,8 +37,9 @@ export default function Contact() {
   }
 
   return (
-    <section id="contacto" className="py-24 lg:py-32 bg-coffee-800/30 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-coffee-700/20 via-transparent to-transparent" />
+    <section id="contacto" className="py-24 lg:py-32 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-coffee-600/5 via-transparent to-transparent" />
+      <div className="absolute top-0 left-0 w-56 h-56 bg-coffee-500/5 rounded-full blur-3xl" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

@@ -53,8 +53,9 @@ const achievements = [
 
 export default function Experience() {
   return (
-    <section id="experiencia" className="py-24 lg:py-32 bg-coffee-800/30 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-coffee-700/20 via-transparent to-transparent" />
+    <section id="experiencia" className="py-24 lg:py-32 bg-coffee-800/20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-coffee-600/10 via-transparent to-transparent" />
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-coffee-500/10 rounded-full blur-3xl" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

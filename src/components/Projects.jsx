@@ -1,85 +1,50 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ExternalLink, Github } from 'lucide-react'
 
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
+    title: 'TecnoKnG – Ecommerce + Panel Administrativo',
     category: 'Full Stack',
-    description: 'Plataforma de comercio electrónico completa con carrito de compras, pasarela de pagos y panel de administración.',
+    description: 'Plataforma web para la venta de productos tecnológicos y servicios de reparación, con tienda online y panel de administración.',
+    fullDescription: 'Plataforma web con tienda online y panel administrativo. Incluye CRUD de productos, categorías y marcas, carrito de compras con persistencia, gestión de pedidos e inventario, y arquitectura modular con Context API. Desplegada en producción con Next.js.',
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    liveUrl: '#',
-    githubUrl: '#',
+    tags: ['React JS', 'Next.js 14', 'TypeScript', 'TailwindCSS', 'Firebase', 'Firestore'],
+    liveUrl: 'https://tecnokng.com/',
+    githubUrl: 'https://github.com/bjisadorozco/TecnoKnG-LandingPage',
     featured: true,
   },
   {
     id: 2,
-    title: 'Dashboard Analytics',
-    category: 'Frontend',
-    description: 'Dashboard interactivo con visualización de datos en tiempo real, gráficos dinámicos y reportes exportables.',
+    title: 'Staff Hub – Sistema de gestión ministerial',
+    category: 'Full Stack',
+    description: 'Sistema integral para la gestión del ministerio juvenil, con administración de contactos, invitaciones y asistencia a eventos.',
+    fullDescription: 'Sistema web para gestión ministerial con autenticación Firebase, base de datos Firestore optimizada, CRUD de contactos, invitaciones y asistencia, rutas protegidas, reglas de seguridad, dashboard con métricas en tiempo real y despliegue en Vercel.',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
-    tags: ['Vue.js', 'D3.js', 'Firebase', 'Tailwind'],
-    liveUrl: '#',
-    githubUrl: '#',
+    tags: ['React JS', 'Next.js 14', 'TypeScript', 'Firebase', 'Firestore', 'TailwindCSS'],
+    liveUrl: 'https://staff-hub-gr.vercel.app/',
+    githubUrl: 'https://github.com/bjisadorozco/STAFF-HUB-GR',
     featured: true,
   },
   {
     id: 3,
-    title: 'App de Fitness',
+    title: 'PrestApp Manager – Aplicación móvil de gestión de préstamos',
     category: 'Mobile',
-    description: 'Aplicación móvil para seguimiento de entrenamientos, nutrición y progreso personal con IA.',
-    image: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80',
-    tags: ['React Native', 'Express', 'PostgreSQL'],
+    description: 'Aplicación móvil para la gestión de préstamos personales con cálculo automático de cuotas y generación de recibos.',
+    fullDescription: 'Aplicación móvil con React Native y TypeScript. Incluye sistema de préstamos con cálculo automático de intereses y cuotas, integración Firebase con control por roles, generación de recibos PDF, envío por WhatsApp, dashboard con métricas y gestión de estado con Zustand.',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80',
+    tags: ['React Native', 'Expo', 'TypeScript', 'Firebase', 'Firestore', 'Zustand'],
     liveUrl: '#',
-    githubUrl: '#',
-    featured: false,
-  },
-  {
-    id: 4,
-    title: 'Blog Platform',
-    category: 'Full Stack',
-    description: 'Plataforma de blogs con editor markdown, sistema de comentarios y SEO optimizado.',
-    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80',
-    tags: ['Next.js', 'Prisma', 'PostgreSQL', 'MDX'],
-    liveUrl: '#',
-    githubUrl: '#',
-    featured: false,
-  },
-  {
-    id: 5,
-    title: 'Task Manager',
-    category: 'Frontend',
-    description: 'Gestor de tareas colaborativo con drag & drop, notificaciones y sincronización en tiempo real.',
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80',
-    tags: ['React', 'Redux', 'Socket.io', 'Node.js'],
-    liveUrl: '#',
-    githubUrl: '#',
-    featured: false,
-  },
-  {
-    id: 6,
-    title: 'Portfolio Creativo',
-    category: 'Design',
-    description: 'Portfolio interactivo con animaciones 3D, transiciones fluidas y diseño inmersivo.',
-    image: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800&q=80',
-    tags: ['Three.js', 'GSAP', 'React', 'Framer Motion'],
-    liveUrl: '#',
-    githubUrl: '#',
-    featured: false,
+    githubUrl: 'https://github.com/bjisadorozco/mobile-loan-app',
+    featured: true,
   },
 ]
 
-const categories = ['Todos', 'Full Stack', 'Frontend', 'Mobile', 'Design']
+const categories = ['Todos', 'Full Stack', 'Mobile']
 
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState('Todos')
   const [hoveredProject, setHoveredProject] = useState(null)
-
-  const filteredProjects = activeCategory === 'Todos' 
-    ? projects 
-    : projects.filter(p => p.category === activeCategory)
 
   return (
     <section id="proyectos" className="py-24 lg:py-32 bg-coffee-800/30 relative">
@@ -101,8 +66,8 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        {/* Category Filter */}
-        <motion.div
+        {/* Category Filter - Comentado para usar después */}
+        {/* <motion.div
           className="flex flex-wrap justify-center gap-3 mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -121,80 +86,15 @@ export default function Projects() {
               {category}
             </button>
           ))}
-        </motion.div>
+        </motion.div> */}
 
-        {/* Featured Project */}
-        {filteredProjects.filter(p => p.featured).length > 0 && (
-          <motion.div
-            className="mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            {filteredProjects.filter(p => p.featured).slice(0, 1).map(project => (
-              <div
-                key={project.id}
-                className="card overflow-hidden p-0 group"
-              >
-                <div className="grid lg:grid-cols-2">
-                  {/* Image */}
-                  <div className="relative h-64 lg:h-auto overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-coffee-900/80 via-coffee-900/20 to-transparent lg:bg-gradient-to-r" />
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="p-8 lg:p-12 flex flex-col justify-center">
-                    <span className="text-coffee-400 text-sm font-medium mb-2">{project.category}</span>
-                    <h3 className="text-3xl font-display font-bold text-coffee-100 mb-4">{project.title}</h3>
-                    <p className="text-coffee-300 mb-6 leading-relaxed">{project.description}</p>
-                    
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {project.tags.map(tag => (
-                        <span key={tag} className="px-3 py-1 bg-coffee-700/30 text-coffee-400 text-sm rounded-full">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    <div className="flex gap-4">
-                      <motion.a
-                        href={project.liveUrl}
-                        className="btn-primary text-sm py-3 px-6 flex items-center gap-2"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <ExternalLink size={16} />
-                        Ver Proyecto
-                      </motion.a>
-                      <motion.a
-                        href={project.githubUrl}
-                        className="btn-secondary text-sm py-3 px-6 flex items-center gap-2"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Github size={16} />
-                        Código
-                      </motion.a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        )}
-
-        {/* Projects Grid */}
+        {/* Projects Grid - 3 proyectos */}
         <motion.div 
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           layout
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.filter(p => !p.featured || activeCategory !== 'Todos').map((project, index) => (
+            {projects.map((project, index) => (
               <motion.div
                 key={project.id}
                 layout
@@ -244,45 +144,43 @@ export default function Projects() {
                 {/* Content */}
                 <div className="p-6">
                   <span className="text-coffee-500 text-sm font-medium">{project.category}</span>
-                  <h3 className="text-xl font-display font-semibold text-coffee-100 mt-1 mb-2 group-hover:text-coffee-300 transition-colors">
+                  <h3 className="text-xl font-display font-semibold text-coffee-100 mt-1 mb-3 group-hover:text-coffee-300 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-coffee-400 text-sm mb-4 line-clamp-2">{project.description}</p>
+                  <p className="text-coffee-400 text-sm mb-4 leading-relaxed">{project.fullDescription}</p>
                   
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.slice(0, 3).map(tag => (
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map(tag => (
                       <span key={tag} className="px-2 py-1 bg-coffee-800/50 text-coffee-400 text-xs rounded">
                         {tag}
                       </span>
                     ))}
-                    {project.tags.length > 3 && (
-                      <span className="px-2 py-1 text-coffee-500 text-xs">
-                        +{project.tags.length - 3}
-                      </span>
-                    )}
+                  </div>
+
+                  <div className="flex gap-3">
+                    <motion.a
+                      href={project.liveUrl}
+                      className="flex-1 btn-primary text-xs py-2 px-4 flex items-center justify-center gap-2"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <ExternalLink size={14} />
+                      Ver Proyecto
+                    </motion.a>
+                    <motion.a
+                      href={project.githubUrl}
+                      className="flex-1 btn-secondary text-xs py-2 px-4 flex items-center justify-center gap-2"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Github size={14} />
+                      Código
+                    </motion.a>
                   </div>
                 </div>
               </motion.div>
             ))}
           </AnimatePresence>
-        </motion.div>
-
-        {/* View All Button */}
-        <motion.div
-          className="text-center mt-12"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          <motion.a
-            href="#"
-            className="btn-secondary inline-flex items-center gap-2"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Ver Todos los Proyectos
-            <ChevronRight size={18} />
-          </motion.a>
         </motion.div>
       </div>
     </section>
