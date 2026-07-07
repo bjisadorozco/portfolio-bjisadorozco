@@ -103,8 +103,7 @@ export default function Hero() {
 
             {/* Description */}
             <motion.p
-              className="text-coffee-300 text-lg max-w-lg mb-8 leading-relaxed"
-              initial={{ opacity: 0 }}
+             className="text-coffee-300 text-lg max-w-lg mb-8 leading-relaxed text-justify lg:text-left"
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >

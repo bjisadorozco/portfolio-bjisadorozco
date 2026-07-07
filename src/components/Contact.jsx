@@ -3,9 +3,9 @@ import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send, Loader2, CheckCircle } from 'lucide-react'
 
 const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'hola@tudominio.com', href: 'mailto:hola@tudominio.com' },
-  { icon: Phone, label: 'Teléfono', value: '+1 234 567 890', href: 'tel:+1234567890' },
-  { icon: MapPin, label: 'Ubicación', value: 'Ciudad, País', href: '#' },
+  { icon: Mail, label: 'Email', value: 'brayanorozco920@gmail.com', href: 'mailto:brayanorozco920@gmail.com' },
+  { icon: Phone, label: 'Teléfono', value: '+57 3014725635', href: 'tel:+573014725635' },
+  { icon: MapPin, label: 'Ubicación', value: 'Valledupar, Colombia', href: 'https://maps.app.goo.gl/8PXQRzsxf8TD7vBVA' },
 ]
 
 export default function Contact() {
@@ -26,14 +26,28 @@ export default function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    setFormData({ name: '', email: '', subject: '', message: '' })
-    
-    setTimeout(() => setIsSubmitted(false), 3000)
+    try {
+      const response = await fetch('https://formspree.io/f/xzdlplld', {
+        method: 'POST',
+        body: new FormData(e.target),
+        headers: {
+          'Accept': 'application/json',
+        },
+      })
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        setTimeout(() => setIsSubmitted(false), 3000)
+      } else {
+        throw new Error('Error al enviar el mensaje')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      alert('Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (

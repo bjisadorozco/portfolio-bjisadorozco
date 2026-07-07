@@ -77,7 +77,7 @@ const services = [
   {
     icon: Smartphone,
     title: 'Apps Móviles',
-    description: 'Desarrollo aplicaciones móviles nativas y multiplataforma para iOS y Android con experiencias fluidas.',
+    description: 'Desarrollo aplicaciones móviles nativas y multiplataforma con experiencias fluidas.',
     features: ['React Native', 'Flutter', 'UX optimizada', 'Push notifications'],
     techIcon: FlutterIcon,
     bgColor: 'from-indigo-500/20 to-purple-500/20'

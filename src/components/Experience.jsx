@@ -1,54 +1,126 @@
 import { motion } from 'framer-motion'
-import { Briefcase, GraduationCap, Award } from 'lucide-react'
+import { Briefcase, GraduationCap, Award, ExternalLink } from 'lucide-react'
 
 const experiences = [
   {
     type: 'work',
-    title: 'Senior Full Stack Developer',
-    company: 'Tech Company',
-    period: '2023 - Presente',
-    description: 'Lideré el desarrollo de aplicaciones web escalables, implementando arquitecturas modernas y mejorando el rendimiento en un 40%.',
-    skills: ['React', 'Node.js', 'AWS', 'MongoDB'],
+    title: 'Desarrollador Full Stack & Mobile',
+    company: 'Freelancer',
+    period: 'Jul 2025 – Feb 2026',
+    location: 'Valledupar, Colombia (Remoto)',
+    description: 'Desarrollé soluciones completas web y móvil para gestión financiera, administrativa y comercial, encargándome del diseño, arquitectura, desarrollo, base de datos, autenticación y despliegue.',
+    skills: ['React JS', 'Next.js', 'React Native', 'TypeScript', 'Firebase', 'TailwindCSS'],
   },
   {
     type: 'work',
-    title: 'Frontend Developer',
-    company: 'Startup Digital',
-    period: '2021 - 2023',
-    description: 'Desarrollé interfaces de usuario interactivas y responsivas, colaborando estrechamente con el equipo de diseño UX.',
-    skills: ['Vue.js', 'TypeScript', 'Tailwind CSS'],
+    title: 'Instructor de Ofimática Empresarial',
+    company: 'Comfacesar',
+    period: 'Jun 2025 – Jul 2025',
+    location: 'La Jagua de Ibirico, Cesar, Colombia (Híbrido)',
+    description: 'Impulsé la formación en ofimática empresarial, diseñando y ofreciendo sesiones virtuales y presenciales en Word, Excel, PowerPoint y Outlook, enfocándome en fortalecer habilidades prácticas para mejorar la productividad laboral.',
+    skills: ['Microsoft Office', 'Office 365', 'Docencia', 'Liderazgo'],
   },
   {
     type: 'work',
-    title: 'Junior Developer',
-    company: 'Agencia Web',
-    period: '2020 - 2021',
-    description: 'Creé sitios web y landing pages para diversos clientes, aprendiendo las mejores prácticas del desarrollo web.',
-    skills: ['JavaScript', 'React', 'WordPress'],
+    title: 'Líder de equipo de ingeniería',
+    company: 'Sofactia SAS',
+    period: 'Ene 2025 – Jul 2025',
+    location: 'Medellín, Colombia (Remoto)',
+    description: 'Organicé y coordiné al equipo de desarrollo, desarrollé cursos interactivos personalizados con React JS, creé plantillas y arquitecturas eficientes, y generé empaquetados SCORM para plataformas LMS.',
+    skills: ['React JS', 'JavaScript', 'HTML', 'CSS', 'Git', 'Jira', 'SCRUM'],
+  },
+  {
+    type: 'work',
+    title: 'Desarrollador Back-End',
+    company: 'UNYDOS SAS',
+    period: 'Jul 2024 – Dic 2024',
+    location: 'Medellín, Colombia (Remoto)',
+    description: 'Mejoré acciones de login y visualización de datos con PHP y MVC, implementé exportación de reportes mensuales en Excel y desarrollé un tour guiado interactivo para usuarios.',
+    skills: ['PHP', 'MySQL', 'Codeigniter', 'MVC', 'Amazon S3'],
+  },
+  {
+    type: 'work',
+    title: 'Desarrollador Front-End',
+    company: 'TensorCode SAS',
+    period: 'Ene 2023 – Jul 2024',
+    location: 'Bogotá, Colombia (Remoto)',
+    description: 'Optimicé el rendimiento del front-end (mejora del 45% en tiempos de carga), realicé pruebas unitarias y de integración, y implementé notificaciones en tiempo real.',
+    skills: ['React JS', 'JavaScript', 'TailwindCSS', 'Firebase', 'NodeJS', 'Git', 'SCRUM'],
   },
 ]
 
 const education = [
   {
     type: 'education',
-    title: 'Ingeniería en Sistemas',
-    institution: 'Universidad Tecnológica',
-    period: '2016 - 2020',
-    description: 'Especialización en desarrollo de software y arquitectura de sistemas.',
+    title: 'Ingeniería de Sistemas',
+    institution: 'Universidad Popular del Cesar',
+    period: 'Mar 2019 - Jun 2025',
+    location: 'Valledupar, Colombia',
+    description: 'Formación integral en desarrollo de software, arquitectura de sistemas y tecnologías modernas.',
+  },
+]
+
+const certifications = [
+  {
+    title: 'Curso Profesional de Docker',
+    institution: 'Código Facilito',
+    period: 'Dic 2025',
+    url: 'https://codigofacilito.com/certificates/abebffaa-6f96-43a8-8f49-d49275e37333',
   },
   {
-    type: 'education',
-    title: 'Certificación Full Stack',
-    institution: 'Bootcamp Tech',
-    period: '2020',
-    description: 'Programa intensivo de desarrollo web con tecnologías modernas.',
+    title: 'Junior Cybersecurity Analyst Career Path',
+    institution: 'Cisco',
+    period: 'Jun 2024',
+    url: 'https://www.credly.com/badges/1210446b-2aea-46cf-a24f-7906311fc819/linked_in_profile',
+  },
+  {
+    title: 'Curso Profesional de React',
+    institution: 'Código Facilito',
+    period: 'Sept 2023',
+    url: 'https://codigofacilito.com/certificates/3d911999-04ad-4033-b7fe-21e667be0b68',
+  },
+  {
+    title: 'Curso Profesional de Angular',
+    institution: 'Código Facilito',
+    period: 'Jul 2023',
+    url: 'https://codigofacilito.com/certificates/fdbab309-853f-4f9c-a3db-447ee1209fed',
+  },
+  {
+    title: 'Curso Profesional de Base de Datos',
+    institution: 'Código Facilito',
+    period: 'Jul 2023',
+    url: 'https://codigofacilito.com/certificates/b6e4f892-8789-43ff-8646-9666be741881',
+  },
+  {
+    title: 'M320: MongoDB Data Modeling',
+    institution: 'MongoDB',
+    period: 'Oct 2023',
+    url: 'https://learn.mongodb.com/c/vDtJ5T0tSfaEi1sQyCKTlg',
+  },
+  {
+  title: 'Constancia de Participacion UCIENCIA',
+  institution: 'UCIENCIA',
+  period: 'Sep 2023',
+  url: 'https://drive.google.com/file/d/1DtR4U_15QDeT0zC0SD2n_V4hWXbj12rL/view?usp=drive_link',
+},
+  {
+    title: 'Introduction to Data Science',
+    institution: 'Cisco',
+    period: 'Oct 2023',
+    url: 'https://www.credly.com/badges/2ce53fb7-559c-4bfe-b7ab-86ef76189c69/print',
+  },
+  {
+    title: 'CCNA: Introduction to Networks',
+    institution: 'Cisco',
+    period: 'Dic 2022',
+    url: 'https://www.credly.com/badges/2503228b-41dd-46dd-82af-cd854b31592a/linked_in_profile',
   },
 ]
 
 const achievements = [
-  { icon: Award, value: '15+', label: 'Certificaciones' },
-  { icon: Briefcase, value: '50+', label: 'Proyectos' },
-  { icon: GraduationCap, value: '500+', label: 'Horas de código' },
+  { icon: Briefcase, value: '3+', label: 'Años de experiencia' },
+  { icon: Award, value: '10+', label: 'Proyectos completados' },
+  { icon: GraduationCap, value: '5000+', label: 'Horas de código' },
 ]
 
 export default function Experience() {
@@ -72,7 +144,7 @@ export default function Experience() {
           </p>
         </motion.div>
 
-        {/* Achievement Stats */}
+        {/* Achievement Stats
         <motion.div
           className="grid grid-cols-3 gap-6 mb-16 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
@@ -95,7 +167,7 @@ export default function Experience() {
               <p className="text-coffee-400 text-sm">{item.label}</p>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Work Experience */}
@@ -135,7 +207,8 @@ export default function Experience() {
                     <div className="card">
                       <span className="text-coffee-500 text-sm font-medium">{exp.period}</span>
                       <h4 className="text-xl font-semibold text-coffee-100 mt-1">{exp.title}</h4>
-                      <p className="text-coffee-400 mb-3">{exp.company}</p>
+                      <p className="text-coffee-400 mb-1">{exp.company}</p>
+                      <p className="text-coffee-500 text-xs mb-3">{exp.location}</p>
                       <p className="text-coffee-300 text-sm mb-4 leading-relaxed">{exp.description}</p>
                       
                       <div className="flex flex-wrap gap-2">
@@ -189,13 +262,58 @@ export default function Experience() {
                     <div className="card">
                       <span className="text-coffee-500 text-sm font-medium">{edu.period}</span>
                       <h4 className="text-xl font-semibold text-coffee-100 mt-1">{edu.title}</h4>
-                      <p className="text-coffee-400 mb-3">{edu.institution}</p>
+                      <p className="text-coffee-400 mb-1">{edu.institution}</p>
+                      <p className="text-coffee-500 text-xs mb-3">{edu.location}</p>
                       <p className="text-coffee-300 text-sm leading-relaxed">{edu.description}</p>
                     </div>
                   </motion.div>
                 ))}
               </div>
             </div>
+
+            {/* Certifications */}
+            <motion.div
+              className="mt-12"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-10 rounded-lg bg-coffee-600/30 flex items-center justify-center">
+                  <Award className="w-5 h-5 text-coffee-400" />
+                </div>
+                <h3 className="text-2xl font-display font-semibold text-coffee-100">
+                  Constancias y Certificaciones
+                </h3>
+              </div>
+
+              <div className="grid grid-cols-1 gap-4">
+                {certifications.map((cert, index) => (
+                  <motion.a
+                    key={cert.title}
+                    href={cert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="card group hover:border-coffee-500/50 transition-colors"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <div className="flex justify-between items-start flex-wrap gap-2">
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <h4 className="text-lg font-semibold text-coffee-100 group-hover:text-coffee-400 transition-colors">{cert.title}</h4>
+                          <ExternalLink className="w-4 h-4 text-coffee-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </div>
+                        <p className="text-coffee-400 text-sm">{cert.institution}</p>
+                      </div>
+                      <span className="text-coffee-500 text-xs font-medium whitespace-nowrap">{cert.period}</span>
+                    </div>
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
 
             {/* Download CV Button */}
             <motion.div
@@ -205,7 +323,7 @@ export default function Experience() {
               viewport={{ once: true }}
             >
               <motion.a
-                href="#"
+                href="https://drive.google.com/file/d/1biDPAyXDgVTfNJbOzHP29i3cGLURswZB/view?usp=drive_link"
                 className="btn-primary inline-flex items-center gap-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

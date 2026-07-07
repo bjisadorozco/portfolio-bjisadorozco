@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
+import imgTecnokng from "../../public/projects/tecnokng.jpeg"
+import imgStaff from "../../public/projects/staff.jpeg"
+import imgPrestApp from "../../public/projects/prestApp.jpg"
 
 const projects = [
   {
@@ -9,7 +12,7 @@ const projects = [
     category: 'Full Stack',
     description: 'Plataforma web para la venta de productos tecnológicos y servicios de reparación, con tienda online y panel de administración.',
     fullDescription: 'Plataforma web con tienda online y panel administrativo. Incluye CRUD de productos, categorías y marcas, carrito de compras con persistencia, gestión de pedidos e inventario, y arquitectura modular con Context API. Desplegada en producción con Next.js.',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
+    image: imgTecnokng,
     tags: ['React JS', 'Next.js 14', 'TypeScript', 'TailwindCSS', 'Firebase', 'Firestore'],
     liveUrl: 'https://tecnokng.com/',
     githubUrl: 'https://github.com/bjisadorozco/TecnoKnG-LandingPage',
@@ -17,26 +20,26 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Staff Hub – Sistema de gestión ministerial',
-    category: 'Full Stack',
-    description: 'Sistema integral para la gestión del ministerio juvenil, con administración de contactos, invitaciones y asistencia a eventos.',
-    fullDescription: 'Sistema web para gestión ministerial con autenticación Firebase, base de datos Firestore optimizada, CRUD de contactos, invitaciones y asistencia, rutas protegidas, reglas de seguridad, dashboard con métricas en tiempo real y despliegue en Vercel.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
-    tags: ['React JS', 'Next.js 14', 'TypeScript', 'Firebase', 'Firestore', 'TailwindCSS'],
-    liveUrl: 'https://staff-hub-gr.vercel.app/',
-    githubUrl: 'https://github.com/bjisadorozco/STAFF-HUB-GR',
-    featured: true,
-  },
-  {
-    id: 3,
     title: 'PrestApp Manager – Aplicación móvil de gestión de préstamos',
     category: 'Mobile',
     description: 'Aplicación móvil para la gestión de préstamos personales con cálculo automático de cuotas y generación de recibos.',
     fullDescription: 'Aplicación móvil con React Native y TypeScript. Incluye sistema de préstamos con cálculo automático de intereses y cuotas, integración Firebase con control por roles, generación de recibos PDF, envío por WhatsApp, dashboard con métricas y gestión de estado con Zustand.',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80',
+    image: imgPrestApp,
     tags: ['React Native', 'Expo', 'TypeScript', 'Firebase', 'Firestore', 'Zustand'],
-    liveUrl: '#',
+    liveUrl: 'https://expo.dev/accounts/bjisadorozco/projects/prestamos-admin/builds/09b1cc79-3dd8-4324-ab13-f03e324aa731',
     githubUrl: 'https://github.com/bjisadorozco/mobile-loan-app',
+    featured: true,
+  },
+  {
+    id: 3,
+    title: 'Staff Hub – Sistema de gestión ministerial',
+    category: 'Full Stack',
+    description: 'Sistema integral para la gestión del ministerio juvenil, con administración de contactos, invitaciones y asistencia a eventos.',
+    fullDescription: 'Sistema web para gestión ministerial con autenticación Firebase, base de datos Firestore optimizada, CRUD de contactos, invitaciones y asistencia, rutas protegidas, reglas de seguridad, dashboard con métricas en tiempo real y despliegue en Vercel.',
+    image: imgStaff,
+    tags: ['React JS', 'Next.js 14', 'TypeScript', 'Firebase', 'Firestore', 'TailwindCSS'],
+    liveUrl: 'https://staff-hub-gr.vercel.app/',
+    githubUrl: 'https://github.com/bjisadorozco/STAFF-HUB-GR',
     featured: true,
   },
 ]
@@ -111,7 +114,7 @@ export default function Projects() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-coffee-900 via-coffee-900/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
                   

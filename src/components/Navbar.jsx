@@ -47,7 +47,7 @@ export default function Navbar() {
             {/* <span className="text-coffee-100 font-display font-semibold text-xl hidden sm:block">
               Brayan Orozco
             </span> */}
-            <img src={profileImage} alt="Profile" className="w-60 h-40 rounded-full" />
+            <img src={profileImage} alt="Profile" className="w-44 h-12 rounded-full" />
           </motion.a>
 
           {/* Desktop Navigation */}

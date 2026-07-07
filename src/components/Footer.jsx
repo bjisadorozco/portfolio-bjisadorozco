@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Twitter, Instagram, Heart, ArrowUp } from 'lucide-react'
+import profileImage from '../../public/bj-logo.png'
 
 const socialLinks = [
-  { icon: Github, href: '#', label: 'GitHub' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Github, href: 'https://github.com/bjisadorozco', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/bjisadorozco/', label: 'LinkedIn' },
+  { icon: Twitter, href: 'https://x.com/brayan_oroxco', label: 'Twitter' },
+  { icon: Instagram, href: 'https://www.instagram.com/brayan_oroxco/', label: 'Instagram' },
 ]
 
 const footerLinks = [
@@ -32,14 +33,15 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <a href="#inicio" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-coffee-400 to-coffee-600 rounded-lg flex items-center justify-center">
-                <span className="text-coffee-900 font-bold text-xl">P</span>
+              <img src={profileImage} alt="Brayan Orozco" className="w-20 h-20 rounded-full" />
+              <div>
+                <span className="text-coffee-100 font-display font-semibold text-xl">Brayan Orozco</span>
+                <p className="text-coffee-500 text-sm">Ingeniero de Sistemas & Desarrollador Full Stack</p>
               </div>
-              <span className="text-coffee-100 font-display font-semibold text-xl">Portfolio</span>
             </a>
             <p className="text-coffee-400 leading-relaxed max-w-xs">
-              Desarrollador Full Stack apasionado por crear experiencias digitales 
-              excepcionales y soluciones innovadoras.
+              Especializado en desarrollo web y móvil, con experiencia en crear soluciones 
+              escalables y de alta calidad para proyectos de diversa índole.
             </p>
           </motion.div>
 
@@ -92,7 +94,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-coffee-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-coffee-500 text-sm flex items-center gap-1">
-            © {new Date().getFullYear()} Portfolio. Hecho con 
+            © {new Date().getFullYear()} Brayan Orozco. Todos los derechos reservados.
             <Heart className="w-4 h-4 text-coffee-400 fill-coffee-400" />
           </p>
           

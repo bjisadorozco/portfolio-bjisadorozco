@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import profileImage from '../../public/jisad-perfil.png'
+import profileImage from '../../public/bj-rose.jpeg'
 
 const techStack = [
   // Lenguajes
