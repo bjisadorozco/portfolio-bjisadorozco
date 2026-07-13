@@ -25,6 +25,17 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault()
+    setIsOpen(false)
+    const target = document.querySelector(href)
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: 'smooth' })
+      }, 150)
+    }
+  }
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -95,7 +106,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="block px-4 py-3 text-coffee-200 hover:text-coffee-100 hover:bg-coffee-700/50 rounded-lg transition-all"
                 >
                   {link.name}
