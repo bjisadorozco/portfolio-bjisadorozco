@@ -6,7 +6,7 @@ const experiences = [
     type: 'work',
     title: 'Desarrollador Full Stack & Mobile',
     company: 'Freelancer',
-    period: 'Jul 2025 – Feb 2026',
+    period: 'Jul 2025 – Jun 2026',
     location: 'Valledupar, Colombia (Remoto)',
     description: 'Desarrollé soluciones completas web y móvil para gestión financiera, administrativa y comercial, encargándome del diseño, arquitectura, desarrollo, base de datos, autenticación y despliegue.',
     skills: ['React JS', 'Next.js', 'React Native', 'TypeScript', 'Firebase', 'TailwindCSS'],
@@ -62,6 +62,24 @@ const education = [
 
 const certifications = [
   {
+    title: 'Curso profesional de Java ',
+    institution: 'HoyAprendo',
+    period: 'Jul 2026',
+    url: 'https://codigofacilito.com/certificates/cad553fb-a64d-4e7b-be6a-88b7d1510c53',
+  },
+  {
+    title: 'Curso de Ingles B1',
+    institution: 'HoyAprendo',
+    period: 'Jul 2026',
+    url: 'https://drive.google.com/file/d/1MZHBq-vmvGvpfHvAuDuNm62TslEz1VzX/view',
+  },
+  {
+    title: 'Desarollo con IA: Programa con Agentes',
+    institution: 'Big School',
+    period: 'Jun 2026',
+    url: 'https://drive.google.com/file/d/1LW60_B1H2m6LpYKwmTypSigQA3B6aoZR/view',
+  },
+  {
     title: 'Curso Profesional de Docker',
     institution: 'Código Facilito',
     period: 'Dic 2025',
@@ -98,11 +116,11 @@ const certifications = [
     url: 'https://learn.mongodb.com/c/vDtJ5T0tSfaEi1sQyCKTlg',
   },
   {
-  title: 'Constancia de Participacion UCIENCIA',
-  institution: 'UCIENCIA',
-  period: 'Sep 2023',
-  url: 'https://drive.google.com/file/d/1DtR4U_15QDeT0zC0SD2n_V4hWXbj12rL/view?usp=drive_link',
-},
+    title: 'Constancia de Participacion UCIENCIA',
+    institution: 'UCIENCIA',
+    period: 'Sep 2023',
+    url: 'https://drive.google.com/file/d/1DtR4U_15QDeT0zC0SD2n_V4hWXbj12rL/view?usp=drive_link',
+  },
   {
     title: 'Introduction to Data Science',
     institution: 'Cisco',
