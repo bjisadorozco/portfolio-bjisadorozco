@@ -63,7 +63,7 @@ const education = [
 const certifications = [
   {
     title: 'Curso profesional de Java ',
-    institution: 'HoyAprendo',
+    institution: 'Código Facilito',
     period: 'Jul 2026',
     url: 'https://codigofacilito.com/certificates/cad553fb-a64d-4e7b-be6a-88b7d1510c53',
   },
@@ -333,22 +333,6 @@ export default function Experience() {
               </div>
             </motion.div>
 
-            {/* Download CV Button */}
-            <motion.div
-              className="mt-10 pl-12"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              <motion.a
-                href="https://drive.google.com/file/d/1biDPAyXDgVTfNJbOzHP29i3cGLURswZB/view?usp=drive_link"
-                className="btn-primary inline-flex items-center gap-2"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Descargar CV
-              </motion.a>
-            </motion.div>
           </motion.div>
         </div>
       </div>

@@ -118,12 +118,14 @@ export default function Hero() {
               transition={{ delay: 0.6 }}
             >
               <motion.a
-                href="#proyectos"
+                href="https://drive.google.com/file/d/1biDPAyXDgVTfNJbOzHP29i3cGLURswZB/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Ver Proyectos
+                Descargar CV
               </motion.a>
               <motion.a
                 href="#contacto"
