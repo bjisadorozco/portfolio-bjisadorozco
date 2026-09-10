@@ -26,6 +26,17 @@
   body {
     @apply bg-coffee-900 text-coffee-100 antialiased;
     font-family: var(--font-sans);
+    /* Cursor flecha personalizado — punta en coffee-400, borde oscuro */
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cfilter id='g'%3E%3CfeDropShadow dx='0' dy='0' stdDeviation='2' flood-color='%23C19A6B' flood-opacity='0.9'/%3E%3C/filter%3E%3Cpath filter='url(%23g)' d='M5 3l14 9-7 1-4 7z' fill='%23C19A6B' stroke='%234A2C17' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 0 0, default;
+  }
+
+  a, button, [role="button"], [tabindex]:not([tabindex='-1']) {
+    /* Cursor pointer personalizado — mano con acento coffee */
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cfilter id='g'%3E%3CfeDropShadow dx='0' dy='0' stdDeviation='2' flood-color='%23C19A6B' flood-opacity='0.9'/%3E%3C/filter%3E%3Cpath filter='url(%23g)' d='M8 3a1 1 0 0 1 1-1h.5a1 1 0 0 1 1 1v5.5a1 1 0 0 1 1-1h.5a1 1 0 0 1 1 1v1a1 1 0 0 1 1-1h.5a1 1 0 0 1 1 1v1a1 1 0 0 1 1-1H16a1 1 0 0 1 1 1v5c0 2.5-2 4-4 4h-2c-2 0-3-1-4-3L5.5 14a1.2 1.2 0 0 1 2-1.3L9 14.5V3z' fill='%23C19A6B' stroke='%234A2C17' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E") 6 0, pointer;
+  }
+
+  input, textarea {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cfilter id='g'%3E%3CfeDropShadow dx='0' dy='0' stdDeviation='2' flood-color='%23C19A6B' flood-opacity='0.9'/%3E%3C/filter%3E%3Cpath filter='url(%23g)' d='M12 4v16M10 4h4M10 20h4' stroke='%23C19A6B' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") 12 12, text;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -92,4 +103,15 @@
 ::selection {
   background: #A67C52;
   color: #2D1810;
+}
+
+/* ── Infinite carousel keyframes ─────────────────────────────────────────── */
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }

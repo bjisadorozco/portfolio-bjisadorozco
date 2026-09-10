@@ -1,46 +1,6 @@
 import { motion } from 'framer-motion'
 import profileImage from '../../public/bj-rose.jpeg'
-
-const techStack = [
-  // Lenguajes
-  "C#", "JavaScript", "PHP", "Dart", "C", "Java",
-
-  // Frontend & Mobile
-  "React JS", "Next.js", "Flutter", "Tailwind CSS",
-
-  // Backend
-  "ASP.NET", "Laravel", "CodeIgniter", "Node JS",
-
-  // Bases de datos
-  "Microsoft SQL Server",
-  "Oracle",
-  "MySQL",
-  "PostgreSQL",
-  "MongoDB",
-  "Firebase",
-
-  // DevOps y Despliegue
-  "Git",
-  "Docker",
-  "AWS",
-  "Vercel",
-  "Postman",
-  "Jira",
-
-  // Inteligencia Artificial y Productividad
-  "ChatGPT",
-  "Claude",
-  "Gemini",
-  "GitHub Copilot",
-  "Cursor",
-  "Trae",
-
-  // Metodologías y buenas prácticas
-  "Scrum",
-  "XP",
-  "SOLID",
-  "Design Patterns",
-]
+import TechCarousel from './TechCarousel'
 
 export default function About() {
   return (
@@ -64,6 +24,7 @@ export default function About() {
           </p>
         </motion.div>
 
+        {/* Profile + Bio grid */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Profile Image */}
           <motion.div
@@ -73,37 +34,41 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative mx-auto max-w-md">
-              {/* Multiple animated decorative layers */}
+            <div className="relative mx-auto w-72 sm:w-80 lg:w-100">
+              {/* Animated glow */}
               <motion.div
                 className="absolute -inset-4 bg-gradient-to-r from-coffee-500/30 to-coffee-600/30 rounded-full blur-xl"
-                animate={{
-                  scale: [1, 1.05, 1],
-                  opacity: [0.5, 0.8, 0.5],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
+                animate={{ scale: [1, 1.05, 1], opacity: [0.5, 0.8, 0.5] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />
 
-              {/* Main image container */}
+              {/* Quote Card - desktop */}
+              <motion.div
+                className="hidden sm:block absolute -top-2 -right-4 sm:-right-8 card px-4 py-3 max-w-[220px] z-10"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+              >
+                <p className="text-coffee-300 text-xs leading-relaxed italic text-center">
+                  "Aprender para construir.<br />
+                  Construir para servir.<br />
+                  Servir para inspirar."
+                </p>
+              </motion.div>
+
+              {/* Profile image */}
               <motion.div
                 className="relative p-1 bg-gradient-to-br from-coffee-400 via-coffee-500 to-coffee-600 rounded-full"
-                initial={{ rotate: 0, scale: 0.5 }}
-                whileInView={{ rotate: 720, scale: 1 }}
-                viewport={{ once: false, margin: "-100px" }}
-                transition={{
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 15,
-                  mass: 0.8,
-                }}
+                initial={{ opacity: 0, scale: 0.85 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                whileHover={{ scale: 1.03 }}
               >
                 <div className="bg-coffee-800 rounded-full p-1">
                   <div className="w-full aspect-square rounded-full bg-gradient-to-br from-coffee-700 to-coffee-800 flex items-center justify-center overflow-hidden">
-                    <img  
+                    <img
                       src={profileImage}
                       alt="Foto de perfil"
                       className="w-full h-full object-cover"
@@ -111,76 +76,69 @@ export default function About() {
                   </div>
                 </div>
               </motion.div>
-
-              {/* Hobbies Card */}
-              <motion.div
-                className="mt-6 card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
-                transition={{ delay: 0.3 }}
-              >
-                <h3 className="text-coffee-100 font-display font-semibold text-lg mb-3 text-center">
-                  Hobbies
-                </h3>
-                <div className="flex justify-center items-center gap-3 flex-wrap">
-                  <span className="px-4 py-2 bg-coffee-700/30 border border-coffee-600/30 rounded-full text-coffee-300 text-sm">
-                    Lectura
-                  </span>
-                  <span className="text-coffee-500 font-bold">•</span>
-                  <span className="px-4 py-2 bg-coffee-700/30 border border-coffee-600/30 rounded-full text-coffee-300 text-sm">
-                    Investigación
-                  </span>
-                  <span className="text-coffee-500 font-bold">•</span>
-                  <span className="px-4 py-2 bg-coffee-700/30 border border-coffee-600/30 rounded-full text-coffee-300 text-sm">
-                    Aprendizaje
-                  </span>
-                </div>
-              </motion.div>
             </div>
+
+            {/* Hobbies Card */}
+            <motion.div
+              className="mt-6 card !px-8 w-fit mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <h3 className="text-coffee-100 font-display font-semibold text-lg mb-3 text-center">
+                Hobbies
+              </h3>
+              <div className="flex justify-center items-center gap-2 flex-wrap sm:flex-nowrap">
+                <span className="px-3 py-2 bg-coffee-700/30 border border-coffee-600/30 rounded-full text-coffee-300 text-sm whitespace-nowrap">
+                  Lectura
+                </span>
+                <span className="text-coffee-500 font-bold">•</span>
+                <span className="px-3 py-2 bg-coffee-700/30 border border-coffee-600/30 rounded-full text-coffee-300 text-sm whitespace-nowrap">
+                  Investigación
+                </span>
+                <span className="text-coffee-500 font-bold">•</span>
+                <span className="px-3 py-2 bg-coffee-700/30 border border-coffee-600/30 rounded-full text-coffee-300 text-sm whitespace-nowrap">
+                  Aprendizaje
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Quote - mobile only */}
+            <motion.div
+              className="sm:hidden mt-4 text-center"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              <p className="text-coffee-400 text-xs leading-relaxed italic">
+                "Aprender para construir.<br />
+                Construir para servir.<br />
+                Servir para inspirar."
+              </p>
+            </motion.div>
           </motion.div>
 
-          {/* Right Column - About Text + Tech Stack */}
+          {/* Right Column - Bio + Carousel */}
           <motion.div
-            className="space-y-8"
+            className="space-y-8 min-w-0"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="prose prose-lg">
-              <p className="text-coffee-200 text-lg leading-relaxed mb-6">
-                Soy <span className="text-coffee-400 font-semibold">Ingeniero de Sistemas</span> y <span className="text-coffee-400 font-semibold">Desarrollador Full Stack en formación</span>. Me apasiona transformar ideas abstractas en soluciones reales a través de la tecnología, participando en cada etapa del desarrollo de software: desde el análisis y la planificación hasta la construcción de aplicaciones web y móviles. Actualmente continúo fortaleciendo mis habilidades con el objetivo de crear productos digitales completos, intuitivos y escalables que generen un impacto positivo en las personas.
-              </p>
-              {/* <p className="text-coffee-300 leading-relaxed">
-                Me especializo en construir aplicaciones web modernas utilizando tecnologías como React, 
-                Node.js y bases de datos tanto SQL como NoSQL. Cada proyecto que desarrollo está enfocado 
-                en ofrecer la mejor experiencia de usuario posible, combinando diseño atractivo con 
-                funcionalidad robusta.
-              </p> */}
-            </div>
+            <p className="text-coffee-200 text-lg leading-relaxed break-words">
+              Soy <span className="text-coffee-400 font-semibold">Ingeniero de Sistemas</span> y{' '}
+              <span className="text-coffee-400 font-semibold">Desarrollador Full Stack</span>, apasionado
+              por convertir ideas abstractas en soluciones digitales que cobran vida mediante la tecnología.
+              Me interesa comprender cada problema desde su raíz, analizarlo y transformarlo en sistemas
+              funcionales, intuitivos y escalables. Combino pensamiento analítico, creatividad y calidad
+              técnica para construir productos web y móviles que resuelvan necesidades reales, generen
+              valor y tengan un impacto positivo en las personas.
+            </p>
 
-            {/* Tech Stack Tags */}
-            <div className="card">
-              <h3 className="text-coffee-100 font-display font-semibold text-xl mb-6">
-                Stack Tecnológico
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {techStack.map((tech, index) => (
-                  <motion.span
-                    key={tech}
-                    className="px-3 py-1.5 bg-coffee-700/30 border border-coffee-600/30 rounded-full text-coffee-300 text-xs hover:bg-coffee-600/30 hover:text-coffee-200 transition-colors cursor-default"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: false }}
-                    transition={{ delay: index * 0.03 }}
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    {tech}
-                  </motion.span>
-                ))}
-              </div>
-            </div>
+            <TechCarousel />
           </motion.div>
         </div>
       </div>

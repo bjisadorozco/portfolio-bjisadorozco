@@ -62,6 +62,12 @@ const education = [
 
 const certifications = [
   {
+    title: 'Curso Aprende SQL',
+    institution: 'Midudev',
+    period: 'Aug 2026',
+    url: 'https://www.aprendesql.dev/certificado/5e04db9d-3ca5-41c5-a1ac-c3f794a0bf9b',
+  },
+  {
     title: 'Curso profesional de Java ',
     institution: 'Código Facilito',
     period: 'Jul 2026',

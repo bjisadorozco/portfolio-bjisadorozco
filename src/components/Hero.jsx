@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowDown, Github, Linkedin, MailCheck, Twitter } from 'lucide-react'
+import { ArrowDown, Github, Linkedin, MailCheck, Eye } from 'lucide-react'
 import profileImage from '../../public/profile.jpg'
 
 const roles = ['Ingeniero de Sistemas', 'Desarrollador Full Stack', 'Freelancer']
@@ -21,6 +21,7 @@ export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0)
   const [displayedText, setDisplayedText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
+  const [views, setViews] = useState(null)
 
   useEffect(() => {
     const currentRole = roles[roleIndex]
@@ -137,9 +138,9 @@ export default function Hero() {
               </motion.a>
             </motion.div>
 
-            {/* Social Links */}
+            {/* Social Links + View Counter */}
             <motion.div
-              className="flex items-center gap-4"
+              className="flex items-center gap-4 flex-wrap"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
@@ -158,6 +159,22 @@ export default function Hero() {
                   <social.icon size={20} />
                 </motion.a>
               ))}
+
+              {/* View Counter */}
+              <motion.div
+                className="h-12 px-3 rounded-full bg-coffee-800/50 border border-coffee-700 flex items-center justify-center gap-2 hover:bg-coffee-700 hover:border-coffee-500 transition-all"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 }}
+                title="Visitas totales al portfolio"
+              >
+                <Eye size={15} className="text-coffee-400 shrink-0" />
+                <img
+                  src="https://hits.sh/bjisadorozco.github.io/portfolio-bjisadorozco.svg?style=flat&label=&color=6f4e37&labelColor=6f4e37"
+                  alt="Visitas"
+                  className="h-5"
+                />
+              </motion.div>
             </motion.div>
           </motion.div>
 
