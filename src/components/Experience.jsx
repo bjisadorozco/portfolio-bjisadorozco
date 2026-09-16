@@ -57,6 +57,7 @@ const education = [
     period: 'Mar 2019 - Jun 2025',
     location: 'Valledupar, Colombia',
     description: 'Formación integral en desarrollo de software, arquitectura de sistemas y tecnologías modernas.',
+    diplomaUrl: 'https://drive.google.com/file/d/1k_u4AmHhxtUmY9_XzIettB5ORLtZSegn/view?usp=sharing',
   },
 ]
 
@@ -289,6 +290,19 @@ export default function Experience() {
                       <p className="text-coffee-400 mb-1">{edu.institution}</p>
                       <p className="text-coffee-500 text-xs mb-3">{edu.location}</p>
                       <p className="text-coffee-300 text-sm leading-relaxed">{edu.description}</p>
+                      {edu.diplomaUrl && (
+                        <motion.a
+                          href={edu.diplomaUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 mt-4 btn-secondary text-xs py-2 px-4"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <ExternalLink size={13} />
+                          Ver diploma
+                        </motion.a>
+                      )}
                     </div>
                   </motion.div>
                 ))}

@@ -119,7 +119,7 @@ export default function Hero() {
               transition={{ delay: 0.6 }}
             >
               <motion.a
-                href="https://drive.google.com/file/d/1biDPAyXDgVTfNJbOzHP29i3cGLURswZB/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1uzI6iU_RsQJFa-zqPJ0tK-u0OH2YrQOs/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
