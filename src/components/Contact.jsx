@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, Send, Loader2, CheckCircle } from 'lucide-react'
 const contactInfo = [
   { icon: Mail, label: 'Email', value: 'brayanorozco920@gmail.com', href: 'mailto:brayanorozco920@gmail.com' },
   { icon: Phone, label: 'Teléfono', value: '+57 3014725635', href: 'tel:+573014725635' },
-  { icon: MapPin, label: 'Ubicación', value: 'Valledupar, Colombia', href: 'https://maps.app.goo.gl/8PXQRzsxf8TD7vBVA' },
+  { icon: MapPin, label: 'Ubicación', value: 'Bogotá, Colombia', href: 'https://maps.app.goo.gl/8PXQRzsxf8TD7vBVA' },
 ]
 
 export default function Contact() {
@@ -92,7 +92,7 @@ export default function Contact() {
               {contactInfo.map((item, index) => (
                 <motion.a
                   key={item.label}
-                  href={item.href}
+                  // href={item.href}
                   className="card flex items-center gap-4 group"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
